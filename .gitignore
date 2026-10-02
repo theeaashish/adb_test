@@ -1,0 +1,10 @@
+# Generated application cache
+/src/app/.eslintcache
+
+# Local database files
+/src/db/
+/src/rest/mydatabase
+
+# Python bytecode
+__pycache__/
+*.py[cod]
