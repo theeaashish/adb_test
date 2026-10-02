@@ -13,3 +13,13 @@ class TodoRepository:
         result = self.collection.insert_one({"description": description})
 
         return {"id": str(result.inserted_id), "description": description}
+
+    def find_all(self) -> list[dict[str, str]]:
+        """return all todo item from the db"""
+
+        todos = self.collection.find()
+
+        return [
+            {"id": str(todo["_id"]), "description": todo["description"]}
+            for todo in todos
+        ]
